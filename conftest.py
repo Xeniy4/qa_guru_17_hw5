@@ -11,11 +11,10 @@ def browser_manager():
     driver_options.page_load_strategy = 'eager'
     browser.config.driver_options = driver_options
     browser.config.base_url = "https://demoqa.com"
-    browser.config.window_width = 1400
-    browser.config.window_height = 1000
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
     browser.open('/automation-practice-form')
     browser.config.timeout = 30
-    browser.config.click_by_js = True
 
     yield
 
