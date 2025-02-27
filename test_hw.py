@@ -1,7 +1,10 @@
+import os
+
 from selene import browser, command
 
 
 def test_form(browser_manager):
+
     browser.element('#firstName').type('Kseniya')
     browser.element('#lastName').type('Goryaeva')
     browser.element('#userEmail').type('Goryaeva@mail.ru')
@@ -16,6 +19,7 @@ def test_form(browser_manager):
     browser.element('#subjectsInput').type('hist')
     browser.element('#react-select-2-option-0').click()
     browser.element('#hobbies-checkbox-1').perform(command.js.click)
+    browser.element('#uploadPicture').send_keys(os.path.abspath('C:\QA\pic.png'))
     browser.element('#currentAddress').type('Нижний Новгород')
     browser.execute_script("window.scrollBy(0,6000)")
     browser.element('#state .css-tlfecz-indicatorContainer').click()
